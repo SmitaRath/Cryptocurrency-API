@@ -15,7 +15,6 @@ Three enhancements I could have done.
 1.	First, I would have also used Redis to store the data on temporary cache, so if the application has recommended to buy from some exchange, then that price can be saved in the temporary cache, for the selling recommendation.
 2.	Second, the historical prices can also be shown to the user for the better recommendation of buying and selling.
 3.	For the previous week I can store the exchange prices, profit and timestamp, whenever there is a profit and can be shown to the user for last week which will give a better picture to user about the market trend.
-![image](https://user-images.githubusercontent.com/72769273/138611735-d43f5117-840c-4215-ab12-d989203b0f14.png)
 
 
 
