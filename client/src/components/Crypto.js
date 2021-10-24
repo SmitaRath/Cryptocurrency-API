@@ -20,11 +20,8 @@ function Crypto() {
     const [loading,setLoading] = useState(true);
     const [date,setDate] = useState('');
 
-    useEffect(
-		async () => {
-			console.log ("useEffect fired")
-
-            var date = moment()
+    async function getPrices(){
+      var date = moment()
                   .utcOffset('-04')
                   .format(' hh:mm:ss a');
             setDate(date);
@@ -39,9 +36,14 @@ function Crypto() {
                 console.log(e);
                 setResult(null);
             }
-				
+    }
+
+    useEffect(
+		async () => {
+			await getPrices();			
 		},[])
 
+    setInterval(getPrices, 30000);
     
 
     if(loading){
