@@ -63,12 +63,14 @@ router.get("/cryptocurrency",async(req,res)=>{
     if(returnResult.btcBuyCoinBase && returnResult.coinbase.btcBuy < returnResult.gemini.btcSell)
     {
         returnResult.btcSellGemini=true;
+        returnResult.btcProfit = returnResult.gemini.btcSell - returnResult.coinbase.btcBuy;
 
     }
 
     if(returnResult.btcBuyGemini && returnResult.gemini.btcBuy < returnResult.coinbase.btcSell)
     {
         returnResult.btcSellCoinbase=true;
+        returnResult.btcProfit = returnResult.coinbase.btcSell - returnResult.gemini.btcBuy;
 
     }
 
@@ -84,12 +86,14 @@ router.get("/cryptocurrency",async(req,res)=>{
     if(returnResult.ethBuyCoinBase && returnResult.coinbase.ethBuy < returnResult.gemini.ethSell)
     {
         returnResult.ethSellGemini=true;
+        returnResult.ethProfit = returnResult.gemini.ethSell - returnResult.coinbase.ethBuy;
 
     }
 
     if(returnResult.ethBuyGemini && returnResult.gemini.ethBuy < returnResult.coinbase.ethSell)
     {
         returnResult.ethSellCoinbase=true;
+        returnResult.ethProfit = returnResult.coinbase.ethSell - returnResult.gemini.ethBuy;
 
     }
         

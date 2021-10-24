@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import React, { Component } from "react";
+import React from "react";
 import Card from 'react-bootstrap/Card';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
@@ -15,18 +15,26 @@ import Alert from 'react-bootstrap/Alert'
 
 
 
-function Crypto() {
+function Crypto(props) {
 
     const [result,setResult] = useState({});
     const [loading,setLoading] = useState(true);
-    const [date,setDate] = useState('');
+    const [date,setDate] = useState(moment()
+    .utcOffset('-04')
+    .format(' hh:mm:ss a'));
 
-    async function getPrices(){
+
+    function changeDate(){
       var date = moment()
-                  .utcOffset('-04')
-                  .format(' hh:mm:ss a');
-            setDate(date);
+      .utcOffset('-04')
+      .format(' hh:mm:ss a');
+      setDate(date);
+    }
 
+    useEffect(
+		() => {
+      async function getNewPrices()
+      {
             try{
                 const data = await axios.get("http://localhost:4000/cryptocurrency");
                 console.log(data);
@@ -36,15 +44,12 @@ function Crypto() {
             catch(e){
                 console.log(e);
                 setResult(null);
-            }
-    }
+            }	
+      }
+      getNewPrices();	
+		},[date])
 
-    useEffect(
-		async () => {
-			await getPrices();			
-		},[])
-
-   // setInterval(getPrices, 30000);
+    setInterval(changeDate, 1000);
     
 
     if(loading){
@@ -59,7 +64,7 @@ function Crypto() {
     {
         return(
         <div>
-            <img class="img" src={crypto}/>
+            <img className="img" src={crypto}/>
 
 <Tabs defaultActiveKey="Bitcoin" id="uncontrolled-tab-example" className="mb-3">
   <Tab eventKey="Bitcoin" title="Bitcoin">
@@ -94,7 +99,7 @@ function Crypto() {
           <Alert variant="info">
             <p>You should buy from Coinbase</p>
             {result.data.btcSellGemini ?
-           <p>And you can sell to Gemini</p> :
+           <p>And you can sell to Gemini - Profit: {result.data.btcProfit}/unit </p> :
            <p>But do not sell now, you can sell in future when prices are good</p>}
             </Alert>
           : <p></p>} 
@@ -103,7 +108,7 @@ function Crypto() {
            <Alert variant="info">
            <p>You should buy from Gemini</p>
            {result.data.btcSellCoinbase ?
-           <p>And you can sell to Coinbase</p> :
+           <p>And you can sell to Coinbase - Profit: {result.data.btcProfit}/unit </p> :
            <p>But do not sell now, you can sell in future when prices are good</p>}
            </Alert>
           : <p></p>} 
@@ -142,7 +147,7 @@ function Crypto() {
           <Alert variant="info">
             <p>You should buy from Coinbase</p>
             {result.data.ethSellGemini ?
-           <p>And you can sell to Gemini</p> :
+           <p>And you can sell to Gemini - Profit: {result.data.ethProfit}/unit </p> :
            <p>But do not sell now, you can sell in future when prices are good</p>}
             </Alert>
           : <p></p>} 
@@ -151,7 +156,7 @@ function Crypto() {
            <Alert variant="info">
            <p>You should buy from Gemini</p>
            {result.data.ethSellCoinbase ?
-           <p>And you can sell to Coinbase</p> :
+           <p>And you can sell to Coinbase - Profit: {result.data.ethProfit}/unit </p> :
            <p>But do not sell now, you can sell in future when prices are good</p>}
            </Alert>
           : <p></p>} 
