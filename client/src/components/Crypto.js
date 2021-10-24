@@ -37,9 +37,10 @@ function Crypto(props) {
       {
             try{
                 const data = await axios.get("http://localhost:4000/cryptocurrency");
-                console.log(data);
-                setResult(data);
-                setLoading(false);
+                if(data.data)
+                  {setResult(data);
+                  setLoading(false);
+                }
             }
             catch(e){
                 console.log(e);
@@ -99,8 +100,8 @@ function Crypto(props) {
           <Alert variant="info">
             <p>You should buy from Coinbase</p>
             {result.data.btcSellGemini ?
-           <p>And you can sell to Gemini - Profit: {result.data.btcProfit}/unit </p> :
-           <p>But do not sell now, you can sell in future when prices are good</p>}
+           <p>And you can sell to Gemini - Profit: ${result.data.btcProfit}/unit </p> :
+           <p>But do not sell now, you can sell in future when prices are good - Profit: ${result.data.btcProfit}/unit </p>}
             </Alert>
           : <p></p>} 
 
@@ -108,8 +109,8 @@ function Crypto(props) {
            <Alert variant="info">
            <p>You should buy from Gemini</p>
            {result.data.btcSellCoinbase ?
-           <p>And you can sell to Coinbase - Profit: {result.data.btcProfit}/unit </p> :
-           <p>But do not sell now, you can sell in future when prices are good</p>}
+           <p>And you can sell to Coinbase - Profit: ${result.data.btcProfit}/unit </p> :
+           <p>But do not sell now, you can sell in future when prices are good - Profit: ${result.data.btcProfit}/unit </p>}
            </Alert>
           : <p></p>} 
 
@@ -147,8 +148,8 @@ function Crypto(props) {
           <Alert variant="info">
             <p>You should buy from Coinbase</p>
             {result.data.ethSellGemini ?
-           <p>And you can sell to Gemini - Profit: {result.data.ethProfit}/unit </p> :
-           <p>But do not sell now, you can sell in future when prices are good</p>}
+           <p>And you can sell to Gemini - Profit: ${result.data.ethProfit}/unit </p> :
+           <p>But do not sell now, you can sell in future when prices are good - Profit: ${result.data.ethProfit}/unit</p>}
             </Alert>
           : <p></p>} 
 
@@ -156,8 +157,8 @@ function Crypto(props) {
            <Alert variant="info">
            <p>You should buy from Gemini</p>
            {result.data.ethSellCoinbase ?
-           <p>And you can sell to Coinbase - Profit: {result.data.ethProfit}/unit </p> :
-           <p>But do not sell now, you can sell in future when prices are good</p>}
+           <p>And you can sell to Coinbase - Profit: ${result.data.ethProfit}/unit </p> :
+           <p>But do not sell now, you can sell in future when prices are good - Profit: ${result.data.ethProfit}/unit</p>}
            </Alert>
           : <p></p>} 
   </Tab>
