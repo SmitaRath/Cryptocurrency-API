@@ -51,7 +51,50 @@ router.get("/cryptocurrency",async(req,res)=>{
     catch(e){
         console.log(e);
     }
+    
+    if(returnResult.coinbase.btcBuy<returnResult.gemini.btcBuy){
+        returnResult.btcBuyCoinBase = true;
+    }
+        
+    else{
+        returnResult.btcBuyGemini = true;
+    }
+
+    if(returnResult.btcBuyCoinBase && returnResult.coinbase.btcBuy < returnResult.gemini.btcSell)
+    {
+        returnResult.btcSellGemini=true;
+
+    }
+
+    if(returnResult.btcBuyGemini && returnResult.gemini.btcBuy < returnResult.coinbase.btcSell)
+    {
+        returnResult.btcSellCoinbase=true;
+
+    }
+
+    if(returnResult.coinbase.ethBuy<returnResult.gemini.ethBuy){
+        returnResult.ethBuyCoinBase = true;
+       
+    }
+        
+    else{
+        returnResult.ethBuyGemini = true;
+    }
+
+    if(returnResult.ethBuyCoinBase && returnResult.coinbase.ethBuy < returnResult.gemini.ethSell)
+    {
+        returnResult.ethSellGemini=true;
+
+    }
+
+    if(returnResult.ethBuyGemini && returnResult.gemini.ethBuy < returnResult.coinbase.ethSell)
+    {
+        returnResult.ethSellCoinbase=true;
+
+    }
+        
     res.json(returnResult);
+
 });
 
 module.exports = router;

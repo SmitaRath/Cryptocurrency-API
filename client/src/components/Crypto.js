@@ -11,6 +11,7 @@ import gemini from '../img/gemini.png';
 import coinbase from '../img/coinbase.jpeg';
 import crypto from '../img/Cryptocurrency.jpeg';
 import '../App.css';
+import Alert from 'react-bootstrap/Alert'
 
 
 
@@ -43,7 +44,7 @@ function Crypto() {
 			await getPrices();			
 		},[])
 
-    setInterval(getPrices, 30000);
+   // setInterval(getPrices, 30000);
     
 
     if(loading){
@@ -67,8 +68,8 @@ function Crypto() {
     <Card.Img variant="top" src={coinbase} />
     <Card.Body>
       <Card.Text>
-        <p>Buy : {result.data.coinbase.btcBuy}</p>
-        <p>Sell : {result.data.coinbase.btcSell}</p>
+        <p>Buy : ${result.data.coinbase.btcBuy}</p>
+        <p>Sell : ${result.data.coinbase.btcSell}</p>
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -79,8 +80,8 @@ function Crypto() {
     <Card.Img variant="top" src={gemini} />
     <Card.Body>
       <Card.Text>
-        <p>Buy : {result.data.gemini.btcBuy}</p>
-        <p>Sell : {result.data.gemini.btcSell}</p>
+        <p>Buy : ${result.data.gemini.btcBuy}</p>
+        <p>Sell : ${result.data.gemini.btcSell}</p>
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -88,6 +89,26 @@ function Crypto() {
     </Card.Footer>
   </Card>
 </CardGroup>
+
+          {result.data.btcBuyCoinBase ?
+          <Alert variant="info">
+            <p>You should buy from Coinbase</p>
+            {result.data.btcSellGemini ?
+           <p>And you can sell to Gemini</p> :
+           <p>But do not sell now, you can sell in future when prices are good</p>}
+            </Alert>
+          : <p></p>} 
+
+        {result.data.btcBuyGemini ?
+           <Alert variant="info">
+           <p>You should buy from Gemini</p>
+           {result.data.btcSellCoinbase ?
+           <p>And you can sell to Coinbase</p> :
+           <p>But do not sell now, you can sell in future when prices are good</p>}
+           </Alert>
+          : <p></p>} 
+
+
   </Tab>
   <Tab eventKey="Ethereum" title="Ethereum">
   <CardGroup>
@@ -95,8 +116,8 @@ function Crypto() {
     <Card.Img variant="top" src={coinbase} />
     <Card.Body>
       <Card.Text>
-      <p>Buy : {result.data.coinbase.ethBuy}</p>
-        <p>Sell : {result.data.coinbase.ethSell}</p>
+      <p>Buy : ${result.data.coinbase.ethBuy}</p>
+        <p>Sell : ${result.data.coinbase.ethSell}</p>
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -107,8 +128,8 @@ function Crypto() {
     <Card.Img variant="top" src={gemini} />
     <Card.Body>
       <Card.Text>
-      <p>Buy : {result.data.gemini.ethBuy}</p>
-        <p>Sell : {result.data.gemini.ethSell}</p>
+      <p>Buy : ${result.data.gemini.ethBuy}</p>
+        <p>Sell : ${result.data.gemini.ethSell}</p>
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -116,6 +137,24 @@ function Crypto() {
     </Card.Footer>
   </Card>
 </CardGroup>
+
+        {result.data.ethBuyCoinBase ?
+          <Alert variant="info">
+            <p>You should buy from Coinbase</p>
+            {result.data.ethSellGemini ?
+           <p>And you can sell to Gemini</p> :
+           <p>But do not sell now, you can sell in future when prices are good</p>}
+            </Alert>
+          : <p></p>} 
+
+        {result.data.ethBuyGemini ?
+           <Alert variant="info">
+           <p>You should buy from Gemini</p>
+           {result.data.ethSellCoinbase ?
+           <p>And you can sell to Coinbase</p> :
+           <p>But do not sell now, you can sell in future when prices are good</p>}
+           </Alert>
+          : <p></p>} 
   </Tab>
 
 </Tabs>
