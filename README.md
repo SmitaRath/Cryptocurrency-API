@@ -50,3 +50,17 @@ Three enhancements I could have done.
 
 
 ### Once application is done, please stop the redis server using command: brew services stop redis
+
+
+![image](https://user-images.githubusercontent.com/72769273/141520596-1223120e-5ee0-42ad-80d7-9454324fdeee.png)
+
+![image](https://user-images.githubusercontent.com/72769273/141520747-ee7da8ef-bca6-41c0-ba04-b4ae59537d6f.png)
+
+![image](https://user-images.githubusercontent.com/72769273/141520871-eda0534e-1c92-497e-930e-a6929e9b2137.png)
+
+![image](https://user-images.githubusercontent.com/72769273/141521852-0d060290-1bb4-469b-9dde-094918c49058.png)
+
+![image](https://user-images.githubusercontent.com/72769273/141521900-6eb610e0-639a-4d5b-8738-96df45adbf5c.png)
+
+
+
