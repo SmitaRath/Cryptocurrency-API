@@ -18,13 +18,13 @@ To clear the old redis cache enter redis-cli FLUSHALL (it will clear all the old
 
 Open 2 terminals in the project folder
 ### Terminal 1-
-• cd server
-• npm install
-• node app.js
-###Terminal 2-
-• cd client
-• npm install
-• npm start
+• cd server<br/>
+• npm install<br/>
+• node app.js <br/>
+### Terminal 2-
+• cd client<br/>
+• npm install<br/>
+• npm start<br/>
 Backend
 The server will start running at localhost:4000
 Frontend
