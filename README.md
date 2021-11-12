@@ -55,13 +55,24 @@ Three enhancements I could have done.
 
 ![image](https://user-images.githubusercontent.com/72769273/141520596-1223120e-5ee0-42ad-80d7-9454324fdeee.png)
 
+### User Bought bitcoin, so price saved in the cache
 ![image](https://user-images.githubusercontent.com/72769273/141520747-ee7da8ef-bca6-41c0-ba04-b4ae59537d6f.png)
 
+### User Bought again bitcoin, so price saved in the cache
 ![image](https://user-images.githubusercontent.com/72769273/141520871-eda0534e-1c92-497e-930e-a6929e9b2137.png)
 
-![image](https://user-images.githubusercontent.com/72769273/141521852-0d060290-1bb4-469b-9dde-094918c49058.png)
+#### Application recommends user to sell, from the minimum buy price( stored in the cache)  which user bought
+![image](https://user-images.githubusercontent.com/72769273/141524350-534187b0-dc07-4233-a06c-b70846c46ce8.png)
 
-![image](https://user-images.githubusercontent.com/72769273/141521900-6eb610e0-639a-4d5b-8738-96df45adbf5c.png)
+#### User sells it, so application is showing how much profit user has made
+![image](https://user-images.githubusercontent.com/72769273/141524415-a8c932e9-7aad-498a-9d2c-5e26c4ee9981.png)
+
+#### Application is recommendin again user to sell, from the minimum buy price( stored in the cache)  which user bought
+![image](https://user-images.githubusercontent.com/72769273/141524616-21a79101-379b-483f-a114-4e2eb84dc8c6.png)
+
+#### User sells it, so application shows how much profit user has made till now
+![image](https://user-images.githubusercontent.com/72769273/141524671-609cdeb3-4be8-4148-bb23-6af12b75043f.png)
+
 
 
 
