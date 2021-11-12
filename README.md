@@ -1,6 +1,36 @@
 # Cryptocurrency-API
 This is a web page for recommending users to buy/sell cryptocurreny.
 
+### Instructions for running the application
+Kindly download the node.js if it is not installed in the system from the below link:
+https://nodejs.org/en/download/
+
+#### If redis is not installed in the system, please install it using the below link
+https://phoenixnap.com/kb/install-redis-on-mac
+
+### These are the steps which needs to be followed to run the application.
+
+Once redis and Node.js are installed successfully<br/><br/>
+### Start redis by performing below steps:<br/>
+In a terminal window type in the follwing to get the Redis server running on the default port: brew services start redis <br/>
+Test whether the redis server is running by typing in: redis-cli ping and it should return "PONG" </br>
+To clear the old redis cache enter redis-cli FLUSHALL (it will clear all the old data from the cache)
+
+Open 2 terminals in the project folder
+### Terminal 1-
+• cd server
+• npm install
+• node app.js
+###Terminal 2-
+• cd client
+• npm install
+• npm start
+Backend
+The server will start running at localhost:4000
+Frontend
+The React client will start running at localhost:3000 automatically.
+
+
 ### 1.	Are there any sub-optimal choices( or short cuts taken due to limited time ) in your implementation?
 Ans) No
 ### 2.	Is any part of it over-designed? ( It is fine to over-design to showcase your skills as long as you are clear about it)
@@ -18,6 +48,4 @@ Three enhancements I could have done.
 
 
 
-![Screen Shot 2021-10-24 at 4 17 56 PM](https://user-images.githubusercontent.com/72769273/138611353-f15e2a3e-3be4-4f7d-a46b-38ab3b1a4099.png)
-
-![Screen Shot 2021-10-24 at 4 18 23 PM](https://user-images.githubusercontent.com/72769273/138611374-eb0a4f93-f69c-4014-953b-b4d5a0a548bc.png)
+### Once application is done, please stop the redis server using command: brew services stop redis
