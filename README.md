@@ -55,7 +55,7 @@ Three enhancements I could have done.
 
 ![image](https://user-images.githubusercontent.com/72769273/141520596-1223120e-5ee0-42ad-80d7-9454324fdeee.png)
 
-## User B=bought bitcoin, so price saved in the cache
+## User bought bitcoin, so price saved in the cache
 ![image](https://user-images.githubusercontent.com/72769273/141520747-ee7da8ef-bca6-41c0-ba04-b4ae59537d6f.png)
 
 ## User bought again bitcoin, so price saved in the cache
