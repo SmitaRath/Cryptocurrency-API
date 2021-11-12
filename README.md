@@ -25,9 +25,10 @@ Open 2 terminals in the project folder
 • cd client<br/>
 • npm install<br/>
 • npm start<br/>
-Backend
-The server will start running at localhost:4000
-Frontend
+
+Backend<br/>
+The server will start running at localhost:4000</br>
+Frontend</br>
 The React client will start running at localhost:3000 automatically.
 
 
