@@ -32,23 +32,6 @@ Frontend</br>
 The React client will start running at localhost:3000 automatically.
 
 
-### 1.	Are there any sub-optimal choices( or short cuts taken due to limited time ) in your implementation?
-Ans) No
-### 2.	Is any part of it over-designed? ( It is fine to over-design to showcase your skills as long as you are clear about it)
-Ans) No
-### 3.	If you have to scale your solution to 100 users/second traffic what changes would you make, if any?
-Ans) 
-1.	For this application I am using free API, if my users are more then I will go for premium API where I will have unlimited requests.
-2.	I will deploy a proxy cache server to which my users will request and get data directly. The proxy cache server will fetch data from the API and make it available in the cache persistently. In that case for every user request, my application will not hit the exchange server, but it can get the data from the proxy cache server.
-### 4.	What are some other enhancements you would have made, if you had more time to do this implementation?
-Ans)
-Three enhancements I could have done.
-### Implemented
-1.	First, I would have also used Redis to store the data on temporary cache, so if the application has recommended to buy from some exchange, then that price can be saved in the temporary cache, for the selling recommendation
-3.	Second, the historical prices can also be shown to the user for the better recommendation of buying and selling.
-5.	For the previous week I can store the exchange prices, profit and timestamp, whenever there is a profit and can be shown to the user for last week which will give a better picture to user about the market trend.
-
-
 
 ### Once application is done, please stop the redis server using command: brew services stop redis
 
